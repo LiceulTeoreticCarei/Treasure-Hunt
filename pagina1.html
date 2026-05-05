@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Liceul Teoretic Carei</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: white;
+}
+
+/* HERO */
+header {
+    height: 80vh;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+        url("https://www.buletindecarei.ro/wp-content/uploads/2011/03/liceul-teoretic-Carei.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 65px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #00eaff;
+    text-shadow: 0 0 20px #00eaff;
+}
+
+.subtitle {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* INTRO */
+.intro {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.intro h2 {
+    margin-bottom: 20px;
+    color: #00eaff;
+}
+
+/* LABS */
+.labs {
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* LINK STYLE (IMPORTANT) */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* CARD */
+.lab-card {
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    position: relative;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.lab-card:hover {
+    transform: scale(1.05);
+}
+
+.lab-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, black, transparent);
+}
+
+.lab-card h2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* IMAGINI LAB */
+.fizica {
+    background: url("https://images.unsplash.com/photo-1554475901-4538ddfbccc2") center/cover;
+}
+
+.chimie {
+    background: url("https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6") center/cover;
+}
+
+.bio {
+    background: url("https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe") center/cover;
+}
+
+.geo {
+    background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") center/cover;
+}
+
+.smart {
+    background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover;
+}
+
+.romana {
+    background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    opacity: 0.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Liceul Teoretic Carei</h1>
+    <div class="subtitle">Proiect realizat de CosarcaDavid</div>
+</header>
+
+<section class="intro">
+    <h2>Introducere</h2>
+    <p>
+       ✨ Bun venit pe site-ul Treasure Hunt!
+
+Ne bucurăm să vă avem alături în această activitate specială organizată pentru elevii de clasa a VIII-a care ne vizitează liceul.
+
+Acest Treasure Hunt a fost creat pentru a vă ajuta să descoperiți într-un mod interactiv și distractiv laboratoarele și spațiile importante din cadrul Liceului Teoretic Carei. Fiecare secțiune reprezintă un laborator diferit, iar în fiecare dintre ele veți găsi întrebări și provocări menite să vă testeze atenția, curiozitatea și spiritul de echipă.
+
+În funcție de laboratorul în care vă aflați, accesați secțiunea corespunzătoare din site pentru a răspunde corect la întrebările pregătite de noi.
+
+Vă încurajăm să lucrați în echipă, să explorați cu atenție și să vă bucurați de experiență, deoarece scopul acestui proiect este să vă ofere o imagine cât mai reală și interesantă asupra vieții de liceu.
+
+Mult succes și distracție plăcută!.
+    </p>
+</section>
+
+<section class="labs">
+
+    <a href="pagina2.html" class="lab-card fizica">
+        <h2>Laborator Fizică</h2>
+    </a>
+
+    <a href="pagina3.html" class="lab-card chimie">
+        <h2>Laborator Chimie</h2>
+    </a>
+
+    <a href="pagina4.html" class="lab-card bio">
+        <h2>Laborator Biologie</h2>
+    </a>
+
+    <a href="pagina5.html" class="lab-card geo">
+        <h2>Laborator Geografie</h2>
+    </a>
+
+    <a href="pagina6.html" class="lab-card smart">
+        <h2>Smart Lab</h2>
+    </a>
+
+    <a href="pagina7.html" class="lab-card romana">
+        <h2>Laborator Română</h2>
+    </a>
+
+</section>
+
+<footer>
+© 2026 Liceul Teoretic Carei
+</footer>
+
+</body>
+</html>
