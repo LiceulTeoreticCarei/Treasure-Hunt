@@ -2,39 +2,162 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Română</title>
+<title>Laborator Limba Română – Treasure Hunt</title>
+
 <style>
-body{background:#0a0a0a;color:white;font-family:Segoe UI;text-align:center;padding:40px;}
-img{width:80%;max-width:500px;border-radius:15px;margin:20px 0;}
-a{color:#00eaff;text-decoration:none;display:block;margin-top:30px;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#2a1a0b,#090402);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+/* TITLU */
+h1{
+    font-size:46px;
+    color:#ffb347;
+    text-shadow:0 0 25px #ffb347;
+    margin-bottom:20px;
+}
+
+/* DESCRIERE */
+.desc{
+    max-width:950px;
+    margin:0 auto 60px;
+    font-size:18px;
+    line-height:1.7;
+    opacity:.9;
+}
+
+/* GRID INTREBARI */
+.questions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,.04);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    transition:.4s;
+}
+.card:hover{
+    transform:scale(1.06);
+    box-shadow:0 25px 70px rgba(255,179,71,.5);
+}
+
+/* IMAGINI */
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+/* TEXT */
+.card h3{
+    color:#ffb347;
+    margin-bottom:10px;
+}
+.card p{
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* BUTON */
+.back{
+    display:inline-block;
+    margin-top:60px;
+    padding:14px 32px;
+    background:#ffb347;
+    color:black;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(255,179,71,.7);
+    transition:.3s;
+}
+.back:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+footer{
+    margin-top:60px;
+    opacity:.5;
+    font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<h1>Bun venit în Laboratorul de Limba și Literatura Română!
-Mai jos aveți câteva întrebări și exerciții la care trebuie să răspundeți din propria cunoștință. Nu copiați de la colegi 😉
-Exprimați-vă clar, corect și demonstrați cât de bine înțelegeți limba română.</h1>
+<h1>📘 Laborator Limba și Literatura Română</h1>
 
+<p class="desc">
+Bun venit în Laboratorul de Limba și Literatura Română!  
+Mai jos aveți câteva întrebări și exerciții la care trebuie să răspundeți
+din propria cunoștință. Nu copiați de la colegi 😉  
+Exprimați-vă clar, corect și demonstrați cât de bine stăpâniți limba română.
+</p>
+
+<div class="questions">
+
+<!-- INTREBAREA 1 -->
+<div class="card">
 <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+<h3>Întrebarea 1</h3>
+<p>Ce este o propoziție?</p>
+</div>
 
-<h2>Întrebări:</h2>
+<!-- INTREBAREA 2 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
+<h3>Întrebarea 2</h3>
+<p>Care sunt părțile de vorbire?</p>
+</div>
 
-<p>1. Ce este o propoziție?</p>
-<p>2. Care sunt părțile de vorbire?</p>
+<!-- INTREBAREA 3 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1474932430478-367d7cc9c7a1">
+<h3>Întrebarea 3</h3>
+<p>Ce este un substantiv?</p>
+</div>
 
-<a href="pagina1.html" style="
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 25px;
-    background:#00eaff;
-    color:black;
-    border-radius:10px;
-    font-weight:bold;
-    text-decoration:none;
-">
-⬅ Înapoi la pagina principală
-</a>
+<!-- INTREBAREA 4 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0ea">
+<h3>Întrebarea 4</h3>
+<p>Ce este un verb?</p>
+</div>
+
+<!-- INTREBAREA 5 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+<h3>Întrebarea 5</h3>
+<p>De ce este importantă citirea cărților?</p>
+</div>
+
+</div>
+
+<a href="pagina1.html" class="back">⬅ Înapoi la pagina principală</a>
+
+<footer>
+LTC © Copyright 2026
+</footer>
 
 </body>
 </html>
