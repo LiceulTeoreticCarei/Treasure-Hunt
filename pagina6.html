@@ -2,39 +2,163 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Smart Lab</title>
+<title>Smart Lab – Treasure Hunt</title>
+
 <style>
-body{background:#0a0a0a;color:white;font-family:Segoe UI;text-align:center;padding:40px;}
-img{width:80%;max-width:500px;border-radius:15px;margin:20px 0;}
-a{color:#00eaff;text-decoration:none;display:block;margin-top:30px;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#061c2d,#020409);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+/* TITLU */
+h1{
+    font-size:46px;
+    color:#00eaff;
+    text-shadow:0 0 25px #00eaff;
+    margin-bottom:20px;
+}
+
+/* DESCRIERE */
+.desc{
+    max-width:950px;
+    margin:0 auto 60px;
+    font-size:18px;
+    line-height:1.7;
+    opacity:.9;
+}
+
+/* GRID INTREBARI */
+.questions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,.04);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    transition:.4s;
+}
+.card:hover{
+    transform:scale(1.06);
+    box-shadow:0 25px 70px rgba(0,234,255,.5);
+}
+
+/* IMAGINI */
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+/* TEXT */
+.card h3{
+    color:#00eaff;
+    margin-bottom:10px;
+}
+.card p{
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* BUTON */
+.back{
+    display:inline-block;
+    margin-top:60px;
+    padding:14px 32px;
+    background:#00eaff;
+    color:black;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(0,234,255,.7);
+    transition:.3s;
+}
+.back:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+footer{
+    margin-top:60px;
+    opacity:.5;
+    font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<h1>Bun venit în Smart Lab!
-Mai jos v-am pregătit câteva întrebări și sarcini digitale la care trebuie să răspundeți individual. Nu copiați răspunsurile 😉
-Folosiți gândirea logică și abilitățile voastre digitale pentru a rezolva totul corect</h1>
+<h1>💻 Smart Lab</h1>
 
+<p class="desc">
+Bun venit în Smart Lab!  
+Mai jos v-am pregătit câteva întrebări și sarcini digitale la care trebuie să
+răspundeți individual. Nu copiați răspunsurile 😉  
+Folosiți gândirea logică și abilitățile voastre digitale pentru a rezolva
+corect fiecare provocare.
+</p>
+
+<div class="questions">
+
+<!-- INTREBAREA 1 -->
+<div class="card">
 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<h3>Întrebarea 1</h3>
+<p>Ce înseamnă IT?</p>
+</div>
 
-<h2>Întrebări:</h2>
+<!-- INTREBAREA 2 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092334432-40b9c1d6c1b7">
+<h3>Întrebarea 2</h3>
+<p>Ce este un algoritm?</p>
+</div>
 
-<p>1. Ce înseamnă IT?</p>
-<p>2. Ce este un algoritm?</p>
+<!-- INTREBAREA 3 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f">
+<h3>Întrebarea 3</h3>
+<p>Ce este un program de calculator?</p>
+</div>
 
-<a href="pagina1.html" style="
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 25px;
-    background:#00eaff;
-    color:black;
-    border-radius:10px;
-    font-weight:bold;
-    text-decoration:none;
-">
-⬅ Înapoi la pagina principală
-</a>
+<!-- INTREBAREA 4 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1537498425277-c283d32ef9db">
+<h3>Întrebarea 4</h3>
+<p>La ce este folosit internetul?</p>
+</div>
+
+<!-- INTREBAREA 5 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
+<h3>Întrebarea 5</h3>
+<p>De ce este importantă securitatea online?</p>
+</div>
+
+</div>
+
+<a href="pagina1.html" class="back">⬅ Înapoi la pagina principală</a>
+
+<footer>
+LTC © Copyright 2026
+</footer>
 
 </body>
 </html>
