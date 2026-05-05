@@ -2,39 +2,161 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Geografie</title>
+<title>Laborator Geografie – Treasure Hunt</title>
+
 <style>
-body{background:#0a0a0a;color:white;font-family:Segoe UI;text-align:center;padding:40px;}
-img{width:80%;max-width:500px;border-radius:15px;margin:20px 0;}
-a{color:#00eaff;text-decoration:none;display:block;margin-top:30px;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#0b2a2d,#020709);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+/* TITLU */
+h1{
+    font-size:48px;
+    color:#00e0ff;
+    text-shadow:0 0 25px #00e0ff;
+    margin-bottom:20px;
+}
+
+/* DESCRIERE */
+.desc{
+    max-width:900px;
+    margin:0 auto 60px;
+    font-size:18px;
+    line-height:1.7;
+    opacity:.9;
+}
+
+/* GRID INTREBARI */
+.questions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,.04);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    transition:.4s;
+}
+.card:hover{
+    transform:scale(1.06);
+    box-shadow:0 25px 70px rgba(0,224,255,.5);
+}
+
+/* IMAGINI */
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+/* TEXT */
+.card h3{
+    color:#00e0ff;
+    margin-bottom:10px;
+}
+.card p{
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* BUTON */
+.back{
+    display:inline-block;
+    margin-top:60px;
+    padding:14px 32px;
+    background:#00e0ff;
+    color:black;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(0,224,255,.7);
+    transition:.3s;
+}
+.back:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+footer{
+    margin-top:60px;
+    opacity:.5;
+    font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<h1>Bun venit în Laboratorul de Geografie!
-Mai jos sunt câteva întrebări la care trebuie să răspundeți folosindu-vă de cunoștințele proprii. Nu copiați unul de la altul 😉
-Gândiți-vă la hărți, fenomene naturale și explicați cât mai clar ceea ce știți despre Pământ.</h1>
+<h1>🌍 Laborator de Geografie</h1>
 
+<p class="desc">
+Bun venit în Laboratorul de Geografie!  
+Analizați imaginile și răspundeți la întrebări folosindu-vă de
+cunoștințele despre Pământ, continente, țări, relief și climă.
+</p>
+
+<div class="questions">
+
+<!-- INTREBAREA 1 -->
+<div class="card">
 <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<h3>Întrebarea 1</h3>
+<p>Care este capitala României?</p>
+</div>
 
-<h2>Întrebări:</h2>
+<!-- INTREBAREA 2 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+<h3>Întrebarea 2</h3>
+<p>Câte continente există pe Pământ?</p>
+</div>
 
-<p>1. Care este capitala României?</p>
-<p>2. Câte continente există pe Pământ?</p>
+<!-- INTREBAREA 3 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<h3>Întrebarea 3</h3>
+<p>Ce este relieful?</p>
+</div>
 
-<a href="pagina1.html" style="
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 25px;
-    background:#00eaff;
-    color:black;
-    border-radius:10px;
-    font-weight:bold;
-    text-decoration:none;
-">
-⬅ Înapoi la pagina principală
-</a>
+<!-- INTREBAREA 4 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa">
+<h3>Întrebarea 4</h3>
+<p>Ce reprezintă o hartă și la ce este folosită?</p>
+</div>
+
+<!-- INTREBAREA 5 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1474511014058-1c2f99b52f0c">
+<h3>Întrebarea 5</h3>
+<p>De ce este importantă protejarea mediului înconjurător?</p>
+</div>
+
+</div>
+
+<a href="pagina1.html" class="back">⬅ Înapoi la pagina principală</a>
+
+<footer>
+LTC © Copyright 2026
+</footer>
 
 </body>
 </html>
