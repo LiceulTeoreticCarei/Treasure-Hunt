@@ -2,39 +2,161 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Biologie</title>
+<title>Laborator Biologie – Treasure Hunt</title>
+
 <style>
-body{background:#0a0a0a;color:white;font-family:Segoe UI;text-align:center;padding:40px;}
-img{width:80%;max-width:500px;border-radius:15px;margin:20px 0;}
-a{color:#00eaff;text-decoration:none;display:block;margin-top:30px;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#0f2d1a,#020907);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+/* TITLU */
+h1{
+    font-size:48px;
+    color:#5cff9d;
+    text-shadow:0 0 25px #5cff9d;
+    margin-bottom:20px;
+}
+
+/* DESCRIERE */
+.desc{
+    max-width:900px;
+    margin:0 auto 60px;
+    font-size:18px;
+    line-height:1.7;
+    opacity:.9;
+}
+
+/* GRID INTREBARI */
+.questions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,.04);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    transition:.4s;
+}
+.card:hover{
+    transform:scale(1.06);
+    box-shadow:0 25px 70px rgba(92,255,157,.5);
+}
+
+/* IMAGINI */
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+/* TEXT */
+.card h3{
+    color:#5cff9d;
+    margin-bottom:10px;
+}
+.card p{
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* BUTON */
+.back{
+    display:inline-block;
+    margin-top:60px;
+    padding:14px 32px;
+    background:#5cff9d;
+    color:black;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(92,255,157,.7);
+    transition:.3s;
+}
+.back:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+footer{
+    margin-top:60px;
+    opacity:.5;
+    font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<h1>Bun venit în Laboratorul de Biologie!
-Mai jos aveți câteva întrebări și exerciții la care trebuie să răspundeți pe baza cunoștințelor voastre. Nu copiați de la alții 😉
-Încercați să observați, să analizați și să răspundeți cât mai corect despre organismele vii și procesele biologice.</h1>
+<h1>🧬 Laborator de Biologie</h1>
 
+<p class="desc">
+Bun venit în Laboratorul de Biologie!  
+Analizați imaginile și răspundeți la întrebări folosindu-vă de
+cunoștințele despre organisme vii, plante, animale și corpul uman.
+</p>
+
+<div class="questions">
+
+<!-- INTREBAREA 1 -->
+<div class="card">
 <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe">
+<h3>Întrebarea 1</h3>
+<p>Care este unitatea de bază a vieții?</p>
+</div>
 
-<h2>Întrebări:</h2>
+<!-- INTREBAREA 2 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<h3>Întrebarea 2</h3>
+<p>Ce organ produce oxigen în plante?</p>
+</div>
 
-<p>1. Care este unitatea de bază a vieții?</p>
-<p>2. Ce organ produce oxigen în plante?</p>
+<!-- INTREBAREA 3 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69">
+<h3>Întrebarea 3</h3>
+<p>Ce este fotosinteza?</p>
+</div>
 
-<a href="pagina1.html" style="
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 25px;
-    background:#00eaff;
-    color:black;
-    border-radius:10px;
-    font-weight:bold;
-    text-decoration:none;
-">
-⬅ Înapoi la pagina principală
-</a>
+<!-- INTREBAREA 4 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+<h3>Întrebarea 4</h3>
+<p>Care este rolul sistemului respirator la om?</p>
+</div>
+
+<!-- INTREBAREA 5 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb">
+<h3>Întrebarea 5</h3>
+<p>De ce sunt plantele importante pentru viața pe Pământ?</p>
+</div>
+
+</div>
+
+<a href="pagina1.html" class="back">⬅ Înapoi la pagina principală</a>
+
+<footer>
+LTC © Copyright 2026
+</footer>
 
 </body>
 </html>
