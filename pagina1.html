@@ -5,9 +5,21 @@
 <title>Liceul Teoretic Carei</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:radial-gradient(circle at top,#050b12,#000);
+    background:
+    radial-gradient(circle at top,#14213d,#0b1020 60%);
     color:white;
     overflow-x:hidden;
 }
@@ -21,110 +33,272 @@ canvas{
 
 /* HERO */
 header{
-    height:90vh;
+    min-height:100vh;
     background:
-      linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.9)),
-      url("https://www.buletindecarei.ro/wp-content/uploads/2011/03/liceul-teoretic-Carei.jpg");
+    linear-gradient(rgba(5,10,20,.75),rgba(5,10,20,.92)),
+    url("https://www.buletindecarei.ro/wp-content/uploads/2011/03/liceul-teoretic-Carei.jpg");
+
     background-size:cover;
     background-position:center;
+
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
     animation:heroZoom 2s ease forwards;
 }
+
 @keyframes heroZoom{
-    from{transform:scale(1.1);opacity:0}
-    to{transform:scale(1);opacity:1}
+    from{
+        transform:scale(1.08);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
 }
 
 header h1{
-    font-size:68px;
-    letter-spacing:5px;
+    font-size:clamp(42px,8vw,92px);
+    font-weight:900;
+    letter-spacing:4px;
     text-transform:uppercase;
-    color:#00eaff;
-    text-shadow:0 0 30px #00eaff;
-    animation:glow 3s infinite alternate;
-}
-@keyframes glow{
-    from{text-shadow:0 0 15px #00eaff}
-    to{text-shadow:0 0 40px #00ffff}
+
+    background:linear-gradient(90deg,#ffffff,#fca311);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:0 10px 40px rgba(252,163,17,.25);
 }
 
 .subtitle{
     position:absolute;
-    bottom:25px;
+    bottom:30px;
     right:30px;
-    opacity:.7;
+    opacity:.8;
+    color:#d1d5db;
+    font-size:14px;
+}
+
+/* INFO TAB */
+.info-tab{
+    position:absolute;
+    top:30px;
+    left:30px;
+    z-index:20;
+}
+
+.info-box{
+    width:360px;
+
+    background:rgba(10,15,25,.55);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.info-badge{
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg,#fca311,#ff7b00);
+
+    color:white;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+}
+
+.info-left h2{
+    font-size:28px;
+    margin:18px 0 14px;
+    line-height:1.2;
+    color:white;
+}
+
+.info-left p{
+    color:#d1d5db;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.info-right{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
 /* INTRO */
 .intro{
-    padding:120px 20px;
-    max-width:900px;
+    padding:120px 30px;
+    max-width:1000px;
     margin:auto;
+
     text-align:center;
+
+    line-height:1.9;
+    font-size:18px;
+
     opacity:0;
     transform:translateY(50px);
     transition:1s;
 }
-.intro.show{opacity:1;transform:none}
-.intro h2{color:#00eaff;margin-bottom:20px}
+
+.intro.show{
+    opacity:1;
+    transform:none;
+}
+
+.intro h2{
+    font-size:48px;
+    margin-bottom:35px;
+    color:#fca311;
+}
 
 /* LABS */
 .labs{
-    padding:80px 30px;
+    padding:100px 40px;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    max-width:1400px;
+
+    margin:auto;
 }
 
 /* LINKS */
-a{text-decoration:none;color:inherit}
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
 /* CARD */
 .lab-card{
-    height:260px;
-    border-radius:18px;
+    height:320px;
+
+    border-radius:28px;
+
     position:relative;
+
     overflow:hidden;
+
     display:flex;
+
     align-items:flex-end;
-    padding:25px;
+
+    padding:30px;
+
     cursor:pointer;
-    transform-style:preserve-3d;
-    transition:.6s;
-    box-shadow:0 15px 40px rgba(0,0,0,.6);
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
+
 .lab-card::after{
     content:"";
+
     position:absolute;
+
     inset:0;
-    background:linear-gradient(to top,black,transparent);
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(5,10,20,.96),
+    rgba(5,10,20,.15)
+    );
 }
+
 .lab-card:hover{
-    transform:rotateX(6deg) rotateY(-6deg) scale(1.07);
-    box-shadow:0 30px 80px rgba(0,234,255,.4);
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 30px 70px rgba(252,163,17,.25);
 }
+
 .lab-card h2{
     position:relative;
     z-index:2;
-    font-size:24px;
+
+    font-size:30px;
+    font-weight:700;
 }
 
 /* IMAGINI */
-.fizica{background:url("https://images.unsplash.com/photo-1554475901-4538ddfbccc2") center/cover}
-.chimie{background:url("https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6") center/cover}
-.bio{background:url("https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe") center/cover}
-.geo{background:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") center/cover}
-.smart{background:url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover}
-.romana{background:url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover}
+.fizica{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.chimie{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.bio{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.geo{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.smart{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.romana{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
 
 /* FOOTER */
 footer{
-    padding:40px;
+    padding:60px;
+
     text-align:center;
-    opacity:.4;
+
+    color:#9ca3af;
+
+    font-size:15px;
 }
 
 /* REVEAL */
@@ -133,7 +307,71 @@ footer{
     transform:translateY(40px);
     transition:1s;
 }
-.reveal.show{opacity:1;transform:none}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+::selection{
+    background:#fca311;
+    color:white;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .info-tab{
+        left:15px;
+        right:15px;
+        top:15px;
+    }
+
+    .info-box{
+        width:100%;
+    }
+
+    .intro h2{
+        font-size:38px;
+    }
+
+    .lab-card{
+        height:280px;
+    }
+
+    .lab-card h2{
+        font-size:24px;
+    }
+
+    header h1{
+        padding:0 20px;
+    }
+
+}
+
+/* NEWTON DECOR */
+.newton{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+
+    z-index:3;
+
+    background:rgba(0,0,0,.45);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    backdrop-filter:blur(10px);
+
+    font-size:14px;
+
+    color:#fca311;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
 </style>
 </head>
 
@@ -142,69 +380,193 @@ footer{
 <canvas id="particles"></canvas>
 
 <header>
-    <h1>Liceul Teoretic Carei</h1>
-    <div class="subtitle">Proiect realizat de Cosarca David</div>
 
+<!-- INFO TAB -->
+<section class="info-tab reveal">
+
+    <div class="info-box">
+
+        <div class="info-left">
+
+            <span class="info-badge">
+                INFO
+            </span>
+
+            <h2>
+                Treasure Hunt
+            </h2>
+
+            <p>
+               
+	Explorează laboratoarele liceului, răspunde la întrebări 
+	și descoperă experiența Treasure Hunt 
+	într-un mod interactiv și distractiv
+            </p>
+
+        </div>
+
+        <div class="info-right">
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+<div>
+    <h1>Liceul Teoretic Carei</h1>
+</div>
+
+<div class="subtitle">
+    Proiect realizat de Cosarca David
+</div>
 
 </header>
 
 <section class="intro reveal">
+
 <h2>Introducere</h2>
+
 <p>
-<p>✨ Bun venit pe site-ul Treasure Hunt! Ne bucurăm să vă avem alături în această activitate specială organizată pentru elevii de clasa a VIII-a care ne vizitează liceul. </p>
-<p>Acest Treasure Hunt a fost creat pentru a vă ajuta să descoperiți într-un mod interactiv și distractiv laboratoarele și spațiile importante din cadrul Liceului Teoretic Carei.</p>
- <p>Fiecare secțiune reprezintă un laborator diferit, iar în fiecare dintre ele veți găsi întrebări și provocări menite să vă testeze atenția, curiozitatea și spiritul de echipă. </p>
-<p> În funcție de laboratorul în care vă aflați, accesați secțiunea corespunzătoare din site pentru a răspunde corect la întrebările pregătite de noi.</p>
- <p>Vă încurajăm să lucrați în echipă, să explorați cu atenție și să vă bucurați de experiență, deoarece scopul acestui proiect este să vă ofere o imagine cât mai reală și interesantă asupra vieții de liceu. </p>
-<p> Mult succes și distracție plăcută!.</p>
+✨ Bun venit pe site-ul Treasure Hunt! Ne bucurăm să vă avem alături în această activitate specială organizată pentru elevii de clasa a VIII-a care ne vizitează liceul.
 </p>
+
+<br>
+
+<p>
+Acest Treasure Hunt a fost creat pentru a vă ajuta să descoperiți într-un mod interactiv și distractiv laboratoarele și spațiile importante din cadrul Liceului Teoretic Carei.
+</p>
+
+<br>
+
+<p>
+Fiecare secțiune reprezintă un laborator diferit, iar în fiecare dintre ele veți găsi întrebări și provocări menite să vă testeze atenția, curiozitatea și spiritul de echipă.
+</p>
+
+<br>
+
+<p>
+În funcție de laboratorul în care vă aflați, accesați secțiunea corespunzătoare din site pentru a răspunde corect la întrebările pregătite de noi.
+</p>
+
+<br>
+
+<p>
+Vă încurajăm să lucrați în echipă, să explorați cu atenție și să vă bucurați de experiență.
+</p>
+
 </section>
 
 <section class="labs">
-<a href="pagina2.html" class="lab-card fizica reveal"><h2>Laborator Fizică</h2></a>
-<a href="pagina3.html" class="lab-card chimie reveal"><h2>Laborator Chimie</h2></a>
-<a href="pagina4.html" class="lab-card bio reveal"><h2>Laborator Biologie</h2></a>
-<a href="pagina5.html" class="lab-card geo reveal"><h2>Laborator Geografie</h2></a>
-<a href="pagina6.html" class="lab-card smart reveal"><h2>Smart Lab</h2></a>
-<a href="pagina7.html" class="lab-card romana reveal"><h2>Laborator Română</h2></a>
+
+<a href="pagina2.html" class="lab-card fizica reveal">
+
+    <div class="newton">
+        
+    </div>
+
+    <h2>Laborator 1</h2>
+
+</a>
+
+<a href="pagina3.html" class="lab-card chimie reveal">
+    <h2>Laborator 2</h2>
+</a>
+
+<a href="pagina4.html" class="lab-card bio reveal">
+    <h2>Laborator 3</h2>
+</a>
+
+<a href="pagina5.html" class="lab-card geo reveal">
+    <h2>Laborator 4</h2>
+</a>
+
+<a href="pagina6.html" class="lab-card smart reveal">
+    <h2>Smart 5</h2>
+</a>
+
+<a href="pagina7.html" class="lab-card romana reveal">
+    <h2>Laborator 6</h2>
+</a>
+
 </section>
 
-<footer>© 2026 Liceul Teoretic Carei</footer>
+<footer>
+© 2026 Liceul Teoretic Carei
+</footer>
 
 <script>
+
 /* SCROLL REVEAL */
 const reveal=document.querySelectorAll('.reveal');
+
 window.addEventListener('scroll',()=>{
+
   reveal.forEach(el=>{
+
     if(el.getBoundingClientRect().top<window.innerHeight-100)
       el.classList.add('show');
-  })
+
+  });
+
 });
 
 /* PARTICLES */
-const c=document.getElementById("particles"),x=c.getContext("2d");
-c.width=innerWidth;c.height=innerHeight;
+
+const c=document.getElementById("particles"),
+x=c.getContext("2d");
+
+c.width=innerWidth;
+c.height=innerHeight;
+
 let p=Array.from({length:80},()=>({
+
  x:Math.random()*c.width,
  y:Math.random()*c.height,
  r:Math.random()*2+1,
  dx:(Math.random()-.5)*.5,
  dy:(Math.random()-.5)*.5
+
 }));
+
 function anim(){
+
  x.clearRect(0,0,c.width,c.height);
+
  p.forEach(a=>{
-  a.x+=a.dx;a.y+=a.dy;
+
+  a.x+=a.dx;
+  a.y+=a.dy;
+
   if(a.x<0||a.x>c.width)a.dx*=-1;
   if(a.y<0||a.y>c.height)a.dy*=-1;
+
   x.beginPath();
+
   x.arc(a.x,a.y,a.r,0,Math.PI*2);
-  x.fillStyle="rgba(0,234,255,.4)";
+
+  x.fillStyle="rgba(252,163,17,.45)";
+
   x.fill();
+
  });
+
  requestAnimationFrame(anim);
+
 }
+
 anim();
+
+/* RESPONSIVE */
+window.addEventListener('resize',()=>{
+
+ c.width=innerWidth;
+ c.height=innerHeight;
+
+});
+
 </script>
 
 </body>
