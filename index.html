@@ -1,12 +1,572 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-  <title>Treasure Hunt</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=pagina1.html">
+<meta charset="UTF-8">
+<title>Nagykárolyi Elméleti Líceum</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at top,#14213d,#0b1020 60%);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* PARTICLES */
+canvas{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+}
+
+/* HERO */
+header{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(5,10,20,.75),rgba(5,10,20,.92)),
+    url("https://www.buletindecarei.ro/wp-content/uploads/2011/03/liceul-teoretic-Carei.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
+    animation:heroZoom 2s ease forwards;
+}
+
+@keyframes heroZoom{
+    from{
+        transform:scale(1.08);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+header h1{
+    font-size:clamp(42px,8vw,92px);
+    font-weight:900;
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    background:linear-gradient(90deg,#ffffff,#fca311);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:0 10px 40px rgba(252,163,17,.25);
+}
+
+.subtitle{
+    position:absolute;
+    bottom:30px;
+    right:30px;
+    opacity:.8;
+    color:#d1d5db;
+    font-size:14px;
+}
+
+/* INFO TAB */
+.info-tab{
+    position:absolute;
+    top:30px;
+    left:30px;
+    z-index:20;
+}
+
+.info-box{
+    width:360px;
+
+    background:rgba(10,15,25,.55);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.info-badge{
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg,#fca311,#ff7b00);
+
+    color:white;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+}
+
+.info-left h2{
+    font-size:28px;
+    margin:18px 0 14px;
+    line-height:1.2;
+    color:white;
+}
+
+.info-left p{
+    color:#d1d5db;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.info-right{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* INTRO */
+.intro{
+    padding:120px 30px;
+    max-width:1000px;
+    margin:auto;
+
+    text-align:center;
+
+    line-height:1.9;
+    font-size:18px;
+
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.intro.show{
+    opacity:1;
+    transform:none;
+}
+
+.intro h2{
+    font-size:48px;
+    margin-bottom:35px;
+    color:#fca311;
+}
+
+/* LABS */
+.labs{
+    padding:100px 40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    max-width:1400px;
+
+    margin:auto;
+}
+
+/* LINKS */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* CARD */
+.lab-card{
+    height:320px;
+
+    border-radius:28px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:30px;
+
+    cursor:pointer;
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.lab-card::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(5,10,20,.96),
+    rgba(5,10,20,.15)
+    );
+}
+
+.lab-card:hover{
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 30px 70px rgba(252,163,17,.25);
+}
+
+.lab-card h2{
+    position:relative;
+    z-index:2;
+
+    font-size:30px;
+    font-weight:700;
+}
+
+/* IMAGINI */
+.fizica{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.chimie{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.bio{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.geo{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.smart{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+.romana{
+    background:
+    url("https://tse2.mm.bing.net/th/id/OIP.pXnYjjDEInI3sohGY2k04gHaIT?pid=Api&h=220&P=0")
+    center/cover;
+}
+
+/* FOOTER */
+footer{
+    padding:60px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    font-size:15px;
+}
+
+/* REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+::selection{
+    background:#fca311;
+    color:white;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .info-tab{
+        left:15px;
+        right:15px;
+        top:15px;
+    }
+
+    .info-box{
+        width:100%;
+    }
+
+    .intro h2{
+        font-size:38px;
+    }
+
+    .lab-card{
+        height:280px;
+    }
+
+    .lab-card h2{
+        font-size:24px;
+    }
+
+    header h1{
+        padding:0 20px;
+    }
+
+}
+
+/* NEWTON DECOR */
+.newton{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+
+    z-index:3;
+
+    background:rgba(0,0,0,.45);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    backdrop-filter:blur(10px);
+
+    font-size:14px;
+
+    color:#fca311;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+</style>
 </head>
+
 <body>
-  Dacă nu ești redirecționat automat, apasă aici:
-  <a href="pagina1.html">Intră în joc</a>
+
+<canvas id="particles"></canvas>
+
+<header>
+
+<!-- INFO TAB -->
+<section class="info-tab reveal">
+
+    <div class="info-box">
+
+        <div class="info-left">
+
+            <span class="info-badge">
+                INFÓ
+            </span>
+
+            <h2>
+                Kincsvadászat
+            </h2>
+
+            <p>
+                Fedezd fel a líceum laboratóriumait, válaszolj a kérdésekre, 
+                és éld át a kincsvadászat élményét 
+                interaktív és szórakoztató módon!
+            </p>
+
+        </div>
+
+        <div class="info-right">
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+<div>
+    <h1>Nagykárolyi Elméleti Líceum</h1>
+</div>
+
+<div class="subtitle">
+    Készítette: Cosarca David
+</div>
+
+</header>
+
+<section class="intro reveal">
+
+<h2>Bevezetés</h2>
+
+<p>
+✨ Üdvözöljük a Kincsvadászat weboldalán! Örülünk, hogy velünk tartotok ebben a különleges tevékenységben, amelyet a hozzánk látogató nyolcadikos diákoknak szerveztünk.
+</p>
+
+<br>
+
+<p>
+Ez a Kincsvadászat azért jött létre, hogy interaktív és szórakoztató módon ismerhessétek meg a Nagykárolyi Elméleti Líceum laboratóriumait és fontos tereit.
+</p>
+
+<br>
+
+<p>
+Minden szekció egy-egy különböző laboratóriumot képvisel, ahol kérdéseket és kihívásokat találtok, amelyek célja a figyelmetek, kíváncsiságotok és csapatmunkátok tesztelése.
+</p>
+
+<br>
+
+<p>
+Attól függően, hogy melyik laborban tartózkodtok, lépjetek be a megfelelő szekcióba az oldalon, hogy megválaszoljátok az általunk készített kérdéseket.
+</p>
+
+<br>
+
+<p>
+Arra bátorítunk titeket, hogy dolgozzatok csapatban, kutassatok figyelmesen és élvezzétek az élményt!
+</p>
+
+</section>
+
+<section class="labs">
+
+<a href="pagina2.html" class="lab-card fizica reveal">
+
+    <div class="newton">
+        
+    </div>
+
+    <h2>1. Laboratórium</h2>
+
+</a>
+
+<a href="pagina3.html" class="lab-card chimie reveal">
+    <h2>2. Laboratórium</h2>
+</a>
+
+<a href="pagina4.html" class="lab-card bio reveal">
+    <h2>3. Laboratórium</h2>
+</a>
+
+<a href="pagina5.html" class="lab-card geo reveal">
+    <h2>4. Laboratórium</h2>
+</a>
+
+<a href="pagina6.html" class="lab-card smart reveal">
+    <h2>Smart 5</h2>
+</a>
+
+<a href="pagina7.html" class="lab-card romana reveal">
+    <h2>6. Laboratórium</h2>
+</a>
+
+</section>
+
+<footer>
+© 2026 Nagykárolyi Elméleti Líceum
+</footer>
+
+<script>
+
+/* SCROLL REVEAL */
+const reveal=document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll',()=>{
+
+  reveal.forEach(el=>{
+
+    if(el.getBoundingClientRect().top<window.innerHeight-100)
+      el.classList.add('show');
+
+  });
+
+});
+
+/* PARTICLES */
+
+const c=document.getElementById("particles"),
+x=c.getContext("2d");
+
+c.width=innerWidth;
+c.height=innerHeight;
+
+let p=Array.from({length:80},()=>({
+
+ x:Math.random()*c.width,
+ y:Math.random()*c.height,
+ r:Math.random()*2+1,
+ dx:(Math.random()-.5)*.5,
+ dy:(Math.random()-.5)*.5
+
+}));
+
+function anim(){
+
+ x.clearRect(0,0,c.width,c.height);
+
+ p.forEach(a=>{
+
+  a.x+=a.dx;
+  a.y+=a.dy;
+
+  if(a.x<0||a.x>c.width)a.dx*=-1;
+  if(a.y<0||a.y>c.height)a.dy*=-1;
+
+  x.beginPath();
+
+  x.arc(a.x,a.y,a.r,0,Math.PI*2);
+
+  x.fillStyle="rgba(252,163,17,.45)";
+
+  x.fill();
+
+ });
+
+ requestAnimationFrame(anim);
+
+}
+
+anim();
+
+/* RESPONSIVE */
+window.addEventListener('resize',()=>{
+
+ c.width=innerWidth;
+ c.height=innerHeight;
+
+});
+
+</script>
+
 </body>
 </html>
