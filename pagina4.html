@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Laborator Biologie – Treasure Hunt</title>
+<title>Laboratorul 3</title>
 
 <style>
 *{
@@ -13,7 +13,7 @@
 }
 
 body{
-    background:radial-gradient(circle at top,#0f2d1a,#020907);
+    background:radial-gradient(circle at top,#0b1c2d,#020409);
     color:white;
     text-align:center;
     padding:50px 20px;
@@ -22,79 +22,55 @@ body{
 /* TITLU */
 h1{
     font-size:48px;
-    color:#5cff9d;
-    text-shadow:0 0 25px #5cff9d;
-    margin-bottom:20px;
-}
-
-/* DESCRIERE */
-.desc{
-    max-width:900px;
-    margin:0 auto 60px;
-    font-size:18px;
-    line-height:1.7;
-    opacity:.9;
-}
-
-/* GRID INTREBARI */
-.questions{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
-    max-width:1100px;
-    margin:auto;
+    color:#00eaff;
+    text-shadow:0 0 25px #00eaff;
+    margin-bottom:40px;
 }
 
 /* CARD */
 .card{
-    background:rgba(255,255,255,.04);
-    border-radius:18px;
-    padding:20px;
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    padding:40px;
     box-shadow:0 20px 50px rgba(0,0,0,.6);
-    transition:.4s;
-}
-.card:hover{
-    transform:scale(1.06);
-    box-shadow:0 25px 70px rgba(92,255,157,.5);
+    line-height:1.9;
+    font-size:20px;
 }
 
-/* IMAGINI */
-.card img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    border-radius:12px;
-    margin-bottom:12px;
+.card h2{
+    color:#00eaff;
+    margin-bottom:25px;
+    font-size:32px;
 }
 
-/* TEXT */
-.card h3{
-    color:#5cff9d;
-    margin-bottom:10px;
+.ro{
+    margin-bottom:40px;
 }
-.card p{
-    font-size:15px;
-    line-height:1.5;
+
+.hu{
+    opacity:.95;
 }
 
 /* BUTON */
 .back{
     display:inline-block;
-    margin-top:60px;
+    margin-top:50px;
     padding:14px 32px;
-    background:#5cff9d;
+    background:#00eaff;
     color:black;
     border-radius:12px;
     font-weight:600;
     text-decoration:none;
-    box-shadow:0 0 20px rgba(92,255,157,.7);
+    box-shadow:0 0 20px rgba(0,234,255,.6);
     transition:.3s;
 }
+
 .back:hover{
     transform:scale(1.1);
 }
 
-/* FOOTER */
 footer{
     margin-top:60px;
     opacity:.5;
@@ -105,57 +81,39 @@ footer{
 
 <body>
 
-<h1>🧬 Laborator de Biologie</h1>
+<h1>Prima Stație</h1></h1>
 
-<p class="desc">
-Bun venit în Laboratorul de Biologie!  
-Analizați imaginile și răspundeți la întrebări folosindu-vă de
-cunoștințele despre organisme vii, plante, animale și corpul uman.
-</p>
-
-<div class="questions">
-
-<!-- INTREBAREA 1 -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe">
-<h3>Întrebarea 1</h3>
-<p>Care este unitatea de bază a vieții?</p>
-</div>
 
-<!-- INTREBAREA 2 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
-<h3>Întrebarea 2</h3>
-<p>Ce organ produce oxigen în plante?</p>
-</div>
+    <div class="ro">
+        <h2>Provocarea 3</h2>
 
-<!-- INTREBAREA 3 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69">
-<h3>Întrebarea 3</h3>
-<p>Ce este fotosinteza?</p>
-</div>
+        <p>
+        „Cum e aerul din jurul tău? Atomii oare ce fac?<br>
+        În fundul eprubetei, elementele în ce se prefac?<br>
+        Aici materia se schimbă la fiecare pas,<br>
+        Iar tabelul lui Mendeleev îți este un bun atlas.”
+        </p>
+    </div>
 
-<!-- INTREBAREA 4 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
-<h3>Întrebarea 4</h3>
-<p>Care este rolul sistemului respirator la om?</p>
-</div>
+    <div class="hu">
+        <h2>3. kihívás<</h2>
 
-<!-- INTREBAREA 5 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb">
-<h3>Întrebarea 5</h3>
-<p>De ce sunt plantele importante pentru viața pe Pământ?</p>
-</div>
+        <p>
+        „Milyen a levegő körülötted?<br>
+        Az atomok miket tesznek?<br>
+        Kémcsövek mélyén az elemek vajon mivé lesznek?<br>
+        Itt színes oldatok pezsegnek, s a periódusos rendszer vár.<br>
+        Hol válik a szürke anyag hirtelen arannyá?”
+        </p>
+    </div>
 
 </div>
 
-<a href="pagina1.html" class="back">⬅ Înapoi la pagina principală</a>
+<a href="pagina1.html" class="back">⬅ Înapoi</a>
 
 <footer>
-LTC © Copyright 2026
+© 2026
 </footer>
 
 </body>
