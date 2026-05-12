@@ -1,1 +1,122 @@
 
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Atelierul 10</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#0b1c2d,#020409);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+h1{
+    font-size:48px;
+    color:#00eaff;
+    text-shadow:0 0 25px #00eaff;
+    margin-bottom:40px;
+}
+
+.card{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    line-height:1.9;
+    font-size:20px;
+}
+
+.card h2{
+    color:#00eaff;
+    margin-bottom:25px;
+    font-size:32px;
+}
+
+.card img{
+    width:100%;
+    max-width:700px;
+    border-radius:15px;
+    margin:20px 0;
+    box-shadow:0 0 25px rgba(0,234,255,.3);
+}
+
+.text-box{
+    margin-top:30px;
+}
+
+.back{
+    display:inline-block;
+    margin-top:50px;
+    padding:14px 32px;
+    background:#00eaff;
+    color:black;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(0,234,255,.6);
+    transition:.3s;
+}
+
+.back:hover{
+    transform:scale(1.1);
+}
+
+footer{
+    margin-top:60px;
+    opacity:.5;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Atelierul 6</h1>
+
+<div class="card">
+
+    <h2></h2>
+
+    <!-- IMAGINE LIMBI STRAINE / SCOALA -->
+    <img src="data:image/png;base64,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">
+
+    <div class="text-box">
+        <h2>Română</h2>
+        <p>n urmă timpul de-l vei da
+Te-ntâmpină Istoria!
+Prin ungherele-i de vei căuta 
+Modele de virtute vei găsi, și mai ales în Europa!
+</p>
+
+
+       <p> Analizați imaginea și încercați să ghiciți<br>
+        ce tip de laborator sau disciplină reprezintă.
+        </p>
+    </div>
+
+    <div class="text-box">
+
+    </div>
+
+</div>
+
+<a href="pagina1.html" class="back">⬅ Înapoi</a>
+
+<footer>
+© 2026
+</footer>
+
+</body>
+</html>
