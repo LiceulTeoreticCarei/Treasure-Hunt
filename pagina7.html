@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Laborator Limba Română – Treasure Hunt</title>
+<title>Laboratorul 6</title>
 
 <style>
 *{
@@ -13,7 +13,7 @@
 }
 
 body{
-    background:radial-gradient(circle at top,#2a1a0b,#090402);
+    background:radial-gradient(circle at top,#0b1c2d,#020409);
     color:white;
     text-align:center;
     padding:50px 20px;
@@ -21,80 +21,56 @@ body{
 
 /* TITLU */
 h1{
-    font-size:46px;
-    color:#ffb347;
-    text-shadow:0 0 25px #ffb347;
-    margin-bottom:20px;
-}
-
-/* DESCRIERE */
-.desc{
-    max-width:950px;
-    margin:0 auto 60px;
-    font-size:18px;
-    line-height:1.7;
-    opacity:.9;
-}
-
-/* GRID INTREBARI */
-.questions{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
-    max-width:1100px;
-    margin:auto;
+    font-size:48px;
+    color:#00eaff;
+    text-shadow:0 0 25px #00eaff;
+    margin-bottom:40px;
 }
 
 /* CARD */
 .card{
-    background:rgba(255,255,255,.04);
-    border-radius:18px;
-    padding:20px;
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    padding:40px;
     box-shadow:0 20px 50px rgba(0,0,0,.6);
-    transition:.4s;
-}
-.card:hover{
-    transform:scale(1.06);
-    box-shadow:0 25px 70px rgba(255,179,71,.5);
+    line-height:1.9;
+    font-size:20px;
 }
 
-/* IMAGINI */
-.card img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    border-radius:12px;
-    margin-bottom:12px;
+.card h2{
+    color:#00eaff;
+    margin-bottom:25px;
+    font-size:32px;
 }
 
-/* TEXT */
-.card h3{
-    color:#ffb347;
-    margin-bottom:10px;
+.ro{
+    margin-top:40px;
 }
-.card p{
-    font-size:15px;
-    line-height:1.5;
+
+.hu{
+    opacity:.95;
 }
 
 /* BUTON */
 .back{
     display:inline-block;
-    margin-top:60px;
+    margin-top:50px;
     padding:14px 32px;
-    background:#ffb347;
+    background:#00eaff;
     color:black;
     border-radius:12px;
     font-weight:600;
     text-decoration:none;
-    box-shadow:0 0 20px rgba(255,179,71,.7);
+    box-shadow:0 0 20px rgba(0,234,255,.6);
     transition:.3s;
 }
+
 .back:hover{
     transform:scale(1.1);
 }
 
-/* FOOTER */
 footer{
     margin-top:60px;
     opacity:.5;
@@ -105,58 +81,38 @@ footer{
 
 <body>
 
-<h1>📘 Laborator Limba și Literatura Română</h1>
+<h1>Laboratorul 6</h1>
 
-<p class="desc">
-Bun venit în Laboratorul de Limba și Literatura Română!  
-Mai jos aveți câteva întrebări și exerciții la care trebuie să răspundeți
-din propria cunoștință. Nu copiați de la colegi 😉  
-Exprimați-vă clar, corect și demonstrați cât de bine stăpâniți limba română.
-</p>
-
-<div class="questions">
-
-<!-- INTREBAREA 1 -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
-<h3>Întrebarea 1</h3>
-<p>Ce este o propoziție?</p>
-</div>
 
-<!-- INTREBAREA 2 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
-<h3>Întrebarea 2</h3>
-<p>Care sunt părțile de vorbire?</p>
-</div>
+    <div class="hu">
+        <h2>Földrajz</h2>
 
-<!-- INTREBAREA 3 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1474932430478-367d7cc9c7a1">
-<h3>Întrebarea 3</h3>
-<p>Ce este un substantiv?</p>
-</div>
+        <p>
+        „Ehhez a kalandhoz nem kell útlevél,<br>
+        Bár hegyek, tengerek tárulnak eléd.<br>
+        Egy néma térkép lesz a legjobb vezetőd,<br>
+        Mialatt a világ titkai feltárulnak előtted.”
+        </p>
+    </div>
 
-<!-- INTREBAREA 4 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0ea">
-<h3>Întrebarea 4</h3>
-<p>Ce este un verb?</p>
-</div>
+    <div class="ro">
+        <h2>Geografie</h2>
 
-<!-- INTREBAREA 5 -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
-<h3>Întrebarea 5</h3>
-<p>De ce este importantă citirea cărților?</p>
-</div>
+        <p>
+        „Nu ai nevoie de pașaport pentru această aventură,<br>
+        Deși vei vedea munți, mări și multă natură.<br>
+        O hartă mută îți va fi cel mai bun ghid,<br>
+        În timp ce secretele lumii spre tine se deschid.”
+        </p>
+    </div>
 
 </div>
 
-<a href="pagina1.html" class="back">⬅ Înapoi la pagina principală</a>
+<a href="pagina1.html" class="back">⬅ Înapoi</a>
 
 <footer>
-LTC © Copyright 2026
+© 2026
 </footer>
 
 </body>
